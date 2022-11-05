@@ -9,7 +9,7 @@ module.exports = {
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.userId })
             .select('-__v')
-            //   .populate('thoughts')
+            .populate('thoughts')
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
@@ -29,8 +29,8 @@ module.exports = {
             .catch((err) => res.status(500).json(err))
     },
     deleteUser(req, res) {
-        User.deleteOne({ _id: req.params.userId})
-        .then((user) =>
+        User.deleteOne({ _id: req.params.userId })
+            .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
                     : res.json(user)
