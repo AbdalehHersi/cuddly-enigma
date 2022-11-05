@@ -1,5 +1,6 @@
 const Thoughts = require("../models/Thoughts");
 const User = require("../models/User");
+const reactionSchema = require("../models/Reactions");
 
 const formattedDate = (array) => {
     for (let i = 0; i < array.length; i++) {
@@ -45,6 +46,26 @@ module.exports = {
                 console.log(err);
                 res.status(500).json(err);
             });
+    },
+    createReaction(req, res) {
+        console.log(req.body);
+        Thoughts.findOneAndUpdate(
+                { _id: req.params.thoughtId },
+                { $addToSet: { reactions: req.body } },
+                { runValidators: true ,new: true }
+            )
+        
+        .then((reactionData) => {
+            !reactionData
+                    ? res
+                        .status(404)
+                        .json({ message: 'Thought created, but found no user with that ID' })
+                    : res.json('Created the reaction 🎉')
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        })
     },
     UpdateThought(req, res) {
         Thoughts.updateOne({ _id: req.params.thoughtId }, { $set: { thoughtText: req.body.thoughtText } })
