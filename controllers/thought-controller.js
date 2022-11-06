@@ -48,7 +48,6 @@ module.exports = {
             });
     },
     createReaction(req, res) {
-        console.log(req.body);
         Thoughts.findOneAndUpdate(
                 { _id: req.params.thoughtId },
                 { $addToSet: { reactions: req.body } },
