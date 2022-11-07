@@ -23,6 +23,6 @@ To run the program all you need to do is enter `node server.js`.
 
 For a more in depth guide you can view this walkthrough.
 
-[Video](https://drive.google.com/file/d/1-HwGVBPF2c6YQYw3joTF-ZzLxkOiMIyR/view)
+[Video](https://drive.google.com/file/d/1LFZoOU7j0AxiIwiTueP_Bxnz439bePyF/view)
 
-[Backup Video](https://youtu.be/zd7YQ-D1SDs)
+[Backup Video](https://youtu.be/Onn6VbOfTZE)
