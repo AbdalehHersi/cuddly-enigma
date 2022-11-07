@@ -25,4 +25,4 @@ For a more in depth guide you can view this walkthrough.
 
 [Video](https://drive.google.com/file/d/1LFZoOU7j0AxiIwiTueP_Bxnz439bePyF/view)
 
-[Backup Video](https://youtu.be/Onn6VbOfTZE)
+[Backup Video](https://youtu.be/Fxomysa_xnI)
